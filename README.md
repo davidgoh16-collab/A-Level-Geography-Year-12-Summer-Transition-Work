@@ -31,6 +31,26 @@ python3 -m http.server 8000
   expand textareas so full answers show, and lay it out cleanly for A4.
 - **Clear answers** — resets all saved input.
 
+## Deploy to Google Cloud Run
+
+The repo ships a `Dockerfile` (nginx serving the static files, listening on
+Cloud Run's `$PORT`). From the repo root:
+
+```bash
+# Build & deploy straight from source
+gcloud run deploy geography-summer-work \
+  --source . \
+  --region europe-west2 \
+  --allow-unauthenticated
+```
+
+Or build and push the image yourself:
+
+```bash
+docker build -t geography-summer-work .
+docker run -p 8080:8080 geography-summer-work   # visit http://localhost:8080
+```
+
 ## Structure
 
 ```
