@@ -1,0 +1,10 @@
+# Keep the image to just the static site — exclude the design handoff bundle,
+# transcripts, VCS, and any local artifacts.
+.git
+.gitignore
+project/
+chats/
+README.md
+*.bundle
+Dockerfile
+.dockerignore
