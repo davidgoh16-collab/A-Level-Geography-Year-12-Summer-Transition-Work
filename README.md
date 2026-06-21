@@ -1,25 +1,54 @@
-# CODING AGENTS: READ THIS FIRST
+# A Level Geography — Summer Transition Work
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+An interactive, on-brand summer worksheet for AQA A Level Geography (Thamesview
+School, KS5 Geography). Students fill it in online, their answers auto-save to
+the browser, and they print it / save as PDF to bring to their first Year 12
+lesson.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## Run it
 
-## What you should do — IMPORTANT
+It's a static site — no build step. Open `index.html` directly, or serve the
+folder:
 
-**Read the chat transcripts first.** There are 1 chat transcript(s) in `chats/`. The transcripts show the full back-and-forth between the user and the design assistant — they tell you **what the user actually wants** and **where they landed** after iterating. Don't skip them. The final HTML files are the output, but the chat is where the intent lives.
+```bash
+python3 -m http.server 8000
+# then visit http://localhost:8000
+```
 
-**Read `project/A Level Geography Summer Work.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+## Features
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+- **Fillable fields** — student details, the AQA Assessment Objectives table,
+  Part 2 task answers, and per-reading summary notes boxes, plus completion
+  checkboxes.
+- **Auto-save** — every answer persists to `localStorage` (key
+  `ks5-geog-summer-work-v1`), with a "Saved" indicator.
+- **Progress tracking** — a top progress bar (`x / 11 tasks complete`) and
+  per-section status pills that flip to "✓ Complete".
+- **Embedded reading** — the two summer pre-reading PDFs and the Changing
+  Places 8.1 podcast are embedded (screen-only) with "open in new tab"
+  fallbacks.
+- **Print / Save PDF** — one button. Print styles strip the toolbar and embeds,
+  expand textareas so full answers show, and lay it out cleanly for A4.
+- **Clear answers** — resets all saved input.
 
-## About the design files
+## Structure
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+```
+index.html   — the worksheet markup + styles
+app.js       — auto-save, progress, print expansion, reset (vanilla JS)
+assets/      — KS5 Geography and Thamesview School logos
+project/     — original Claude Design handoff bundle (HTML prototype, assets)
+chats/       — design conversation transcripts
+```
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+## Implementation notes
 
-## Bundle contents
+This was built from a Claude Design handoff (`project/`). The prototype ran on
+the Claude Design `dc-runtime` (a React templating layer); it has been
+recreated here as a dependency-free static page — the dc-runtime-specific
+`style-hover` / `style-focus` attributes became real CSS, and the `DCLogic`
+component became `app.js`. The visual output matches the prototype.
 
-- `README.md` — this file
-- `chats/` — conversation transcripts (read these!)
-- `project/` — the `Summer Work Document Enhancement` project files (HTML prototypes, assets, components)
+The embedded PDFs/podcast and external links (BBC, ITV, etc.) load when the
+page is opened in a normal browser tab; some refuse to load inside sandboxed
+preview frames.

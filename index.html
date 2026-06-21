@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Level Geography — Summer Transition Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#E7E6E6;}
+  input,textarea,button,select{font-family:inherit;}
+  ::placeholder{color:#B7B7B7;}
+
+  /* Focus state for every fillable field (was dc-runtime style-focus). */
+  input:focus,textarea:focus{
+    border-color:#8866BC !important;
+    box-shadow:0 0 0 3px rgba(136,102,188,0.15);
+    outline:none;
+  }
+
+  /* Toolbar button hovers (was dc-runtime style-hover). */
+  #btnReset:hover{background:#F7EEF3;border-color:#A76389;}
+  #btnPrint:hover{background:#6D4EA0;}
+
+  @media print{
+    @page{margin:12mm;}
+    .no-print{display:none !important;}
+    body{background:#fff !important;}
+    .page-bg{background:#fff !important;padding:0 !important;}
+    .sheet-pad{max-width:none !important;padding:0 !important;margin:0 !important;}
+    .sheet{box-shadow:none !important;border-radius:0 !important;margin:0 !important;max-width:none !important;border:none !important;}
+    .avoid-break{break-inside:avoid;}
+    .screen-only{display:none !important;}
+    textarea,input{border:1px solid #999 !important;}
+    a{color:#2A2A2A !important;text-decoration:none !important;}
+  }
+</style>
+</head>
+<body>
+<div class="page-bg" style="font-family:'Calibri','Carlito','Segoe UI','Trebuchet MS',system-ui,sans-serif;background:#E7E6E6;min-height:100vh;color:#2A2A2A;padding-bottom:56px;">
+
+  <!-- ============ STICKY TOOLBAR ============ -->
+  <div class="no-print" style="position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid #C9C8C8;box-shadow:0 1px 4px rgba(20,20,30,0.07);">
+    <div style="max-width:1000px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:11px;flex:1;min-width:180px;">
+        <img src="assets/ks5-geography-logo.png" alt="KS5 Geography" style="width:34px;height:34px;border-radius:7px;flex:none;" />
+        <div style="line-height:1.15;">
+          <div style="font-size:14px;font-weight:700;color:#2b333c;letter-spacing:.01em;">A Level Geography</div>
+          <div style="font-size:11px;color:#6F6F6F;text-transform:uppercase;letter-spacing:.12em;">Summer Work</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="width:150px;height:8px;background:#E7E6E6;border-radius:99px;overflow:hidden;">
+          <div id="progFill" style="height:100%;width:0%;background:#4F8C5A;border-radius:99px;transition:width .35s ease;"></div>
+        </div>
+        <span id="progText" style="font-size:13px;color:#6F6F6F;white-space:nowrap;">0 / 11 tasks complete</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span id="saveStatus" style="font-size:12px;color:#6F6F6F;opacity:.5;white-space:nowrap;">Saved to this device</span>
+        <button id="btnReset" type="button" style="font-family:inherit;font-size:13px;font-weight:700;color:#8A4C6E;background:#fff;border:1px solid #C9C8C8;border-radius:4px;padding:8px 12px;cursor:pointer;">Clear answers</button>
+        <button id="btnPrint" type="button" style="display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:14px;font-weight:700;color:#fff;background:#8866BC;border:none;border-radius:4px;padding:9px 16px;cursor:pointer;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DOCUMENT SHEET ============ -->
+  <div class="sheet-pad" style="max-width:1000px;margin:24px auto 0;padding:0 16px;">
+    <div class="sheet" style="background:#fff;box-shadow:0 6px 16px rgba(20,20,30,0.10),0 2px 4px rgba(20,20,30,0.05);border-radius:6px;overflow:hidden;">
+
+      <!-- HEADER BAND -->
+      <div style="background:#2b333c;color:#fff;padding:30px 40px;display:flex;align-items:center;gap:26px;flex-wrap:wrap;">
+        <img src="assets/ks5-geography-logo.png" alt="KS5 Geography" style="width:94px;height:94px;border-radius:12px;flex:none;box-shadow:0 6px 16px rgba(0,0,0,0.35);" />
+        <div style="flex:1;min-width:220px;">
+          <div style="font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:#FBDD40;font-weight:700;margin-bottom:7px;">AQA A Level Geography</div>
+          <h1 style="margin:0;font-size:34px;line-height:1.08;font-weight:700;text-transform:uppercase;letter-spacing:.01em;color:#fff;">Summer Transition Work</h1>
+          <div style="margin-top:9px;font-size:15px;color:#C9C8C8;max-width:52ch;line-height:1.5;">Your bridge into Year 12 — work through it, type your answers (they save automatically), then print it and bring it to your first lesson.</div>
+        </div>
+        <div style="flex:none;display:flex;flex-direction:column;align-items:center;gap:8px;">
+          <div style="width:92px;height:92px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,0.35);">
+            <img src="assets/thamesview-logo.png" alt="Thamesview School" style="width:80px;height:80px;display:block;" />
+          </div>
+          <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#C9C8C8;">Thamesview School</span>
+        </div>
+      </div>
+
+      <!-- STUDENT DETAILS -->
+      <div style="background:#FFF2CC;border-bottom:1px solid #F2E2B0;padding:18px 40px;display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;">
+        <div style="flex:2;min-width:200px;">
+          <label style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#8A7A40;font-weight:700;display:block;margin-bottom:5px;">Name</label>
+          <input data-field="studentName" type="text" placeholder="Your full name" style="width:100%;font-family:inherit;font-size:15px;color:#2A2A2A;background:#fff;border:1px solid #E4D29A;border-radius:3px;padding:9px 12px;" />
+        </div>
+        <div style="flex:1;min-width:130px;">
+          <label style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#8A7A40;font-weight:700;display:block;margin-bottom:5px;">Date completed</label>
+          <input data-field="dateCompleted" type="text" placeholder="DD / MM / YYYY" style="width:100%;font-family:inherit;font-size:15px;color:#2A2A2A;background:#fff;border:1px solid #E4D29A;border-radius:3px;padding:9px 12px;" />
+        </div>
+      </div>
+
+      <!-- HOW THIS WORKS -->
+      <div class="avoid-break" style="padding:20px 40px;background:#fff;border-bottom:1px solid #EFEFEF;display:flex;gap:14px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;display:flex;gap:11px;align-items:flex-start;">
+          <div style="width:30px;height:30px;border-radius:6px;background:#EEE9F6;color:#6D4EA0;display:flex;align-items:center;justify-content:center;flex:none;font-weight:700;font-size:14px;">1</div>
+          <div style="font-size:13.5px;color:#4A4A4A;line-height:1.45;"><strong style="color:#2b333c;">Type your answers.</strong> Everything you write is saved to this device automatically.</div>
+        </div>
+        <div style="flex:1;min-width:200px;display:flex;gap:11px;align-items:flex-start;">
+          <div style="width:30px;height:30px;border-radius:6px;background:#EEE9F6;color:#6D4EA0;display:flex;align-items:center;justify-content:center;flex:none;font-weight:700;font-size:14px;">2</div>
+          <div style="font-size:13.5px;color:#4A4A4A;line-height:1.45;"><strong style="color:#2b333c;">Print or save as PDF.</strong> Use the button top-right when you are done.</div>
+        </div>
+        <div style="flex:1;min-width:200px;display:flex;gap:11px;align-items:flex-start;">
+          <div style="width:30px;height:30px;border-radius:6px;background:#EEE9F6;color:#6D4EA0;display:flex;align-items:center;justify-content:center;flex:none;font-weight:700;font-size:14px;">3</div>
+          <div style="font-size:13.5px;color:#4A4A4A;line-height:1.45;"><strong style="color:#2b333c;">Bring it to lesson one.</strong> Your notes will be checked and you will be tested on the reading.</div>
+        </div>
+      </div>
+
+      <!-- ============ SECTION: SPECIFICATION ============ -->
+      <section class="avoid-break" style="padding:34px 40px;border-bottom:1px solid #EFEFEF;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;">
+          <div style="width:6px;align-self:stretch;min-height:30px;background:#FBDD40;border-radius:2px;"></div>
+          <h2 style="margin:0;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#2b333c;line-height:1.15;">The Specification</h2>
+          <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#575E6E;background:#E7E6E6;border-radius:99px;padding:4px 11px;">Reference</span>
+        </div>
+        <p style="margin:0 0 20px;color:#4A4A4A;font-size:14.5px;max-width:70ch;">Two exam papers, each worth 40% of your A Level. Your third 20% is the coursework (NEA). Here is how the written papers break down — keep it handy as you read.</p>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;">
+          <!-- Paper 1 -->
+          <div style="flex:1;min-width:280px;border:1px solid #DAD4E6;border-radius:7px;overflow:hidden;">
+            <div style="background:#8866BC;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:baseline;">
+              <strong style="font-size:16px;text-transform:uppercase;letter-spacing:.04em;">Paper 1</strong>
+              <span style="font-size:12px;opacity:.9;">Physical · 2h 30m · 40%</span>
+            </div>
+            <div style="padding:13px 16px;border-bottom:1px solid #EFEFEF;">
+              <div style="display:flex;justify-content:space-between;gap:10px;"><strong style="font-size:14.5px;color:#2b333c;">Water &amp; Carbon Cycle</strong><span style="font-size:12px;color:#8A8A8A;white-space:nowrap;">Sec A · Q1</span></div>
+              <div style="font-size:13px;color:#6F6F6F;margin-top:3px;">1×4-mark · 2×6-mark · 1×20-mark essay</div>
+            </div>
+            <div style="padding:13px 16px;border-bottom:1px solid #EFEFEF;">
+              <div style="display:flex;justify-content:space-between;gap:10px;"><strong style="font-size:14.5px;color:#2b333c;">Coastal Systems &amp; Landscapes</strong><span style="font-size:12px;color:#8A8A8A;white-space:nowrap;">Sec B · Q3</span></div>
+              <div style="font-size:13px;color:#6F6F6F;margin-top:3px;">1×4-mark · 2×6-mark · 1×20-mark essay</div>
+            </div>
+            <div style="padding:13px 16px;">
+              <div style="display:flex;justify-content:space-between;gap:10px;"><strong style="font-size:14.5px;color:#2b333c;">Hazards</strong><span style="font-size:12px;color:#8A8A8A;white-space:nowrap;">Sec C · Q5</span></div>
+              <div style="font-size:13px;color:#6F6F6F;margin-top:3px;">4×1-mark MCQ · 1×6-mark · 2×9-mark · 1×20-mark essay</div>
+            </div>
+          </div>
+          <!-- Paper 2 -->
+          <div style="flex:1;min-width:280px;border:1px solid #E2CEDA;border-radius:7px;overflow:hidden;">
+            <div style="background:#A76389;color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:baseline;">
+              <strong style="font-size:16px;text-transform:uppercase;letter-spacing:.04em;">Paper 2</strong>
+              <span style="font-size:12px;opacity:.9;">Human · 2h 30m · 40%</span>
+            </div>
+            <div style="padding:13px 16px;border-bottom:1px solid #EFEFEF;">
+              <div style="display:flex;justify-content:space-between;gap:10px;"><strong style="font-size:14.5px;color:#2b333c;">Global Systems &amp; Governance</strong><span style="font-size:12px;color:#8A8A8A;white-space:nowrap;">Sec A · Q1</span></div>
+              <div style="font-size:13px;color:#6F6F6F;margin-top:3px;">1×4-mark · 2×6-mark · 1×20-mark essay</div>
+            </div>
+            <div style="padding:13px 16px;border-bottom:1px solid #EFEFEF;">
+              <div style="display:flex;justify-content:space-between;gap:10px;"><strong style="font-size:14.5px;color:#2b333c;">Changing Places</strong><span style="font-size:12px;color:#8A8A8A;white-space:nowrap;">Sec B · Q2</span></div>
+              <div style="font-size:13px;color:#6F6F6F;margin-top:3px;">1×4-mark · 2×6-mark · 1×20-mark essay</div>
+            </div>
+            <div style="padding:13px 16px;">
+              <div style="display:flex;justify-content:space-between;gap:10px;"><strong style="font-size:14.5px;color:#2b333c;">Contemporary Urban Environments</strong><span style="font-size:12px;color:#8A8A8A;white-space:nowrap;">Sec C · Q3</span></div>
+              <div style="font-size:13px;color:#6F6F6F;margin-top:3px;">4×1-mark MCQ · 1×6-mark · 2×9-mark · 1×20-mark essay</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SECTION: ESSENTIAL READING ============ -->
+      <section class="avoid-break" style="padding:34px 40px;border-bottom:1px solid #EFEFEF;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;">
+          <div style="width:6px;align-self:stretch;min-height:30px;background:#FBDD40;border-radius:2px;"></div>
+          <h2 style="margin:0;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#2b333c;line-height:1.15;">Essential Summer Reading</h2>
+          <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:#8866BC;border-radius:99px;padding:4px 11px;">Essential</span>
+          <span id="pill-reading" style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#6F6F6F;background:#FFF2CC;border:1px solid #C9C8C8;border-radius:99px;padding:3px 10px;">0 / 2 done</span>
+        </div>
+        <p style="margin:0 0 20px;color:#4A4A4A;font-size:14.5px;max-width:74ch;">Read <strong>each</strong> pre-reading below and summarise it in your own words in the notes box — no more than <strong>2 sides of A4</strong> each. Your notes save automatically and print with the booklet. You will be tested on these in your first lesson.</p>
+
+        <!-- Reading 1 -->
+        <div style="border:1px solid #E0E0E0;border-radius:8px;overflow:hidden;margin-bottom:22px;">
+          <div class="avoid-break" style="background:#F6F4FA;padding:14px 18px;border-bottom:1px solid #E8E2F0;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="min-width:200px;">
+              <strong style="font-size:15.5px;color:#2b333c;">The Water &amp; Carbon Cycle</strong>
+              <div style="font-size:13px;color:#6F6F6F;">Summer pre-reading (Paper 1)</div>
+            </div>
+            <a href="https://firebasestorage.googleapis.com/v0/b/school-apps-52c7d.firebasestorage.app/o/Year%2012%20Transition%20Materials%2FWater%20and%20Carbon%20Cycles%20Summer%20Pre-reading.pdf?alt=media&amp;token=a2037627-4e3f-424b-becd-070c7ad7bed2" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#fff;background:#8866BC;border-radius:5px;padding:8px 13px;text-decoration:none;flex:none;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              Open PDF in new tab
+            </a>
+          </div>
+          <iframe class="screen-only" src="https://firebasestorage.googleapis.com/v0/b/school-apps-52c7d.firebasestorage.app/o/Year%2012%20Transition%20Materials%2FWater%20and%20Carbon%20Cycles%20Summer%20Pre-reading.pdf?alt=media&amp;token=a2037627-4e3f-424b-becd-070c7ad7bed2" title="Water and Carbon Cycles Summer Pre-reading PDF" style="width:100%;height:560px;border:none;border-bottom:1px solid #EFEFEF;display:block;background:#F4F4F4;"></iframe>
+          <div style="padding:16px 18px;">
+            <label style="display:block;font-size:14.5px;font-weight:700;color:#2b333c;margin-bottom:7px;">Your summary notes — Water &amp; Carbon Cycle</label>
+            <textarea data-field="read1notes" data-track data-group="reading" placeholder="Summarise the reading in your own words (max 2 sides of A4)…" style="width:100%;font-family:inherit;font-size:14.5px;line-height:1.6;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:5px;padding:11px 13px;min-height:200px;resize:vertical;"></textarea>
+            <label style="display:flex;align-items:center;gap:10px;margin-top:12px;font-size:13.5px;color:#4A4A4A;cursor:pointer;">
+              <input data-field="read1done" type="checkbox" style="width:18px;height:18px;accent-color:#4F8C5A;cursor:pointer;" /> My summary is complete (max 2 sides of A4)
+            </label>
+          </div>
+        </div>
+
+        <!-- Reading 2 -->
+        <div style="border:1px solid #E0E0E0;border-radius:8px;overflow:hidden;">
+          <div class="avoid-break" style="background:#F6F4FA;padding:14px 18px;border-bottom:1px solid #E8E2F0;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;">
+            <div style="min-width:200px;">
+              <strong style="font-size:15.5px;color:#2b333c;">Changing Places</strong>
+              <div style="font-size:13px;color:#6F6F6F;">Summer pre-reading (Paper 2)</div>
+            </div>
+            <a href="https://firebasestorage.googleapis.com/v0/b/school-apps-52c7d.firebasestorage.app/o/Year%2012%20Transition%20Materials%2FChanging%20Places%20Summer%20Pre-Reading.pdf?alt=media&amp;token=24e069ca-9b95-4d94-8118-73663c7b7b7b" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#fff;background:#8866BC;border-radius:5px;padding:8px 13px;text-decoration:none;flex:none;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              Open PDF in new tab
+            </a>
+          </div>
+          <iframe class="screen-only" src="https://firebasestorage.googleapis.com/v0/b/school-apps-52c7d.firebasestorage.app/o/Year%2012%20Transition%20Materials%2FChanging%20Places%20Summer%20Pre-Reading.pdf?alt=media&amp;token=24e069ca-9b95-4d94-8118-73663c7b7b7b" title="Changing Places Summer Pre-Reading PDF" style="width:100%;height:560px;border:none;border-bottom:1px solid #EFEFEF;display:block;background:#F4F4F4;"></iframe>
+          <div style="padding:16px 18px;">
+            <label style="display:block;font-size:14.5px;font-weight:700;color:#2b333c;margin-bottom:7px;">Your summary notes — Changing Places</label>
+            <textarea data-field="read2notes" data-track data-group="reading" placeholder="Summarise the reading in your own words (max 2 sides of A4)…" style="width:100%;font-family:inherit;font-size:14.5px;line-height:1.6;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:5px;padding:11px 13px;min-height:200px;resize:vertical;"></textarea>
+            <label style="display:flex;align-items:center;gap:10px;margin-top:12px;font-size:13.5px;color:#4A4A4A;cursor:pointer;">
+              <input data-field="read2done" type="checkbox" style="width:18px;height:18px;accent-color:#4F8C5A;cursor:pointer;" /> My summary is complete (max 2 sides of A4)
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PART 1: UNDERSTANDING THE COURSE ============ -->
+      <section class="avoid-break" style="padding:34px 40px;border-bottom:1px solid #EFEFEF;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;">
+          <div style="width:6px;align-self:stretch;min-height:30px;background:#FBDD40;border-radius:2px;"></div>
+          <h2 style="margin:0;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#2b333c;line-height:1.15;">Part 1 · Understanding the Course</h2>
+          <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:#8866BC;border-radius:99px;padding:4px 11px;">Essential</span>
+          <span id="pill-part1" style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#6F6F6F;background:#FFF2CC;border:1px solid #C9C8C8;border-radius:99px;padding:3px 10px;">0 / 6 done</span>
+        </div>
+        <p style="margin:0 0 8px;color:#4A4A4A;font-size:14.5px;max-width:78ch;">Go to <strong>page 44 (4.2 Assessment Objectives)</strong> of the AQA specification. Read what each Assessment Objective measures, then complete the table — what each AO asks you to do, and its overall weighting in the exam.</p>
+        <p style="margin:0 0 18px;font-size:13.5px;"><a href="https://filestore.aqa.org.uk/resources/geography/specifications/AQA-7037-SP-2016.PDF" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Open the AQA A Level Geography specification (PDF) →</a></p>
+        <div style="border:1px solid #C9C8C8;border-radius:7px;overflow:auto;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:560px;">
+            <thead>
+              <tr style="background:#2b333c;color:#fff;">
+                <th style="text-align:center;padding:11px 12px;width:74px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12px;">AO</th>
+                <th style="text-align:left;padding:11px 14px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12px;">What it measures</th>
+                <th style="text-align:left;padding:11px 14px;width:150px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:12px;">Weighting</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:10px 12px;background:#F3F0F8;font-weight:700;color:#6D4EA0;border-top:1px solid #E7E6E6;text-align:center;vertical-align:top;font-size:16px;">AO1</td>
+                <td style="padding:9px;border-top:1px solid #E7E6E6;border-left:1px solid #EFEFEF;"><textarea data-field="ao1desc" data-track data-group="part1" placeholder="What does AO1 ask you to do?" style="width:100%;font-family:inherit;font-size:14px;line-height:1.5;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:3px;padding:8px 10px;min-height:64px;resize:vertical;"></textarea></td>
+                <td style="padding:9px;border-top:1px solid #E7E6E6;border-left:1px solid #EFEFEF;vertical-align:top;"><input data-field="ao1weight" data-track data-group="part1" type="text" placeholder="e.g. 30–40%" style="width:100%;font-family:inherit;font-size:14px;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:3px;padding:8px 10px;" /></td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px;background:#F3F0F8;font-weight:700;color:#6D4EA0;border-top:1px solid #E7E6E6;text-align:center;vertical-align:top;font-size:16px;">AO2</td>
+                <td style="padding:9px;border-top:1px solid #E7E6E6;border-left:1px solid #EFEFEF;"><textarea data-field="ao2desc" data-track data-group="part1" placeholder="What does AO2 ask you to do?" style="width:100%;font-family:inherit;font-size:14px;line-height:1.5;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:3px;padding:8px 10px;min-height:64px;resize:vertical;"></textarea></td>
+                <td style="padding:9px;border-top:1px solid #E7E6E6;border-left:1px solid #EFEFEF;vertical-align:top;"><input data-field="ao2weight" data-track data-group="part1" type="text" placeholder="e.g. 30–40%" style="width:100%;font-family:inherit;font-size:14px;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:3px;padding:8px 10px;" /></td>
+              </tr>
+              <tr>
+                <td style="padding:10px 12px;background:#F3F0F8;font-weight:700;color:#6D4EA0;border-top:1px solid #E7E6E6;text-align:center;vertical-align:top;font-size:16px;">AO3</td>
+                <td style="padding:9px;border-top:1px solid #E7E6E6;border-left:1px solid #EFEFEF;"><textarea data-field="ao3desc" data-track data-group="part1" placeholder="What does AO3 ask you to do?" style="width:100%;font-family:inherit;font-size:14px;line-height:1.5;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:3px;padding:8px 10px;min-height:64px;resize:vertical;"></textarea></td>
+                <td style="padding:9px;border-top:1px solid #E7E6E6;border-left:1px solid #EFEFEF;vertical-align:top;"><input data-field="ao3weight" data-track data-group="part1" type="text" placeholder="e.g. 20–30%" style="width:100%;font-family:inherit;font-size:14px;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:3px;padding:8px 10px;" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ============ PART 2: UNDERSTANDING THE CURRICULUM ============ -->
+      <section style="padding:34px 40px;border-bottom:1px solid #EFEFEF;">
+        <div class="avoid-break" style="display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap;">
+          <div style="width:6px;align-self:stretch;min-height:30px;background:#FBDD40;border-radius:2px;"></div>
+          <h2 style="margin:0;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#2b333c;line-height:1.15;">Part 2 · Understanding the Curriculum</h2>
+          <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:#8866BC;border-radius:99px;padding:4px 11px;">Essential</span>
+          <span id="pill-part2" style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#6F6F6F;background:#FFF2CC;border:1px solid #C9C8C8;border-radius:99px;padding:3px 10px;">0 / 3 done</span>
+        </div>
+        <blockquote style="margin:0 0 26px;font-style:italic;font-size:15.5px;color:#4A4A4A;border-left:4px solid #8866BC;padding:8px 0 8px 20px;line-height:1.55;max-width:80ch;">"To be a great geographer, you will need to develop the ability to think synoptically — to see the greater overview and how everything we study in Geography links together. Geography is not just about studying people and landscapes; it is also the relationships that exist between people and their environment."</blockquote>
+
+        <!-- Task A -->
+        <div class="avoid-break" style="border:1px solid #E0E0E0;border-radius:8px;overflow:hidden;margin-bottom:22px;">
+          <div style="background:#F6F4FA;padding:14px 18px;border-bottom:1px solid #E8E2F0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:700;color:#fff;background:#8866BC;border-radius:5px;padding:4px 9px;letter-spacing:.04em;">TASK A</span>
+            <strong style="font-size:15.5px;color:#2b333c;">Changing Places — the nature &amp; importance of place</strong>
+          </div>
+          <div style="padding:18px;">
+            <div style="margin-bottom:16px;">
+              <div style="display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:#6D4EA0;margin-bottom:10px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                Changing Places 8.1 — Podcast
+              </div>
+              <audio class="screen-only" controls preload="none" title="Changing Places 8.1 Podcast" style="width:100%;height:54px;display:block;">
+                <source src="https://firebasestorage.googleapis.com/v0/b/school-apps-52c7d.firebasestorage.app/o/Year%2012%20Transition%20Materials%2FChanging%20places%208.1%20Podcast.wav?alt=media&amp;token=72db0261-560b-4470-9d61-d97024721800" type="audio/wav">
+              </audio>
+              <div class="screen-only" style="margin-top:6px;font-size:12px;color:#8A8A8A;">If the player does not load, <a href="https://firebasestorage.googleapis.com/v0/b/school-apps-52c7d.firebasestorage.app/o/Year%2012%20Transition%20Materials%2FChanging%20places%208.1%20Podcast.wav?alt=media&amp;token=72db0261-560b-4470-9d61-d97024721800" target="_blank" rel="noopener noreferrer" style="color:#6D4EA0;font-weight:700;">open the podcast in a new tab</a>.</div>
+              <div style="font-size:13px;color:#6F6F6F;margin-top:9px;">Listen to the podcast on the nature and importance of place, then answer the questions below.</div>
+            </div>
+            <label style="display:block;font-size:14.5px;font-weight:700;color:#2b333c;margin-bottom:7px;">1. What are three different ways geographers think about place?</label>
+            <textarea data-field="placeQ1" data-track data-group="part2" placeholder="Type your answer…" style="width:100%;font-family:inherit;font-size:14.5px;line-height:1.6;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:5px;padding:11px 13px;min-height:110px;resize:vertical;margin-bottom:18px;"></textarea>
+            <label style="display:block;font-size:14.5px;font-weight:700;color:#2b333c;margin-bottom:7px;">2. Explain the difference between endogenous and exogenous factors in shaping a place.</label>
+            <textarea data-field="placeQ2" data-track data-group="part2" placeholder="Type your answer…" style="width:100%;font-family:inherit;font-size:14.5px;line-height:1.6;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:5px;padding:11px 13px;min-height:110px;resize:vertical;"></textarea>
+          </div>
+        </div>
+
+        <!-- Task B -->
+        <div class="avoid-break" style="border:1px solid #E0E0E0;border-radius:8px;overflow:hidden;">
+          <div style="background:#F6F4FA;padding:14px 18px;border-bottom:1px solid #E8E2F0;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:700;color:#fff;background:#8866BC;border-radius:5px;padding:4px 9px;letter-spacing:.04em;">TASK B</span>
+            <strong style="font-size:15.5px;color:#2b333c;">The Water &amp; Carbon Cycle — the carbon cycle</strong>
+          </div>
+          <div style="padding:18px;">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+              <span style="font-size:13px;color:#6F6F6F;">Click the link, watch the video, and make notes below.</span>
+              <a href="https://www.youtube.com/watch?v=A4cPmHGegKI" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:#fff;background:#A76389;border-radius:5px;padding:5px 11px;text-decoration:none;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Watch: The Carbon Cycle (TED-Ed)
+              </a>
+            </div>
+            <label style="display:block;font-size:14.5px;font-weight:700;color:#2b333c;margin-bottom:7px;">Your notes on the carbon cycle</label>
+            <textarea data-field="carbonNotes" data-track data-group="part2" placeholder="Make your notes here…" style="width:100%;font-family:inherit;font-size:14.5px;line-height:1.6;color:#2A2A2A;background:#fff;border:1px solid #D7D7D7;border-radius:5px;padding:11px 13px;min-height:170px;resize:vertical;"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NON-ESSENTIAL: WIDER READING & WATCHING ============ -->
+      <section style="padding:34px 40px;border-bottom:1px solid #EFEFEF;">
+        <div class="avoid-break" style="display:flex;align-items:center;gap:14px;margin-bottom:6px;flex-wrap:wrap;">
+          <div style="width:6px;align-self:stretch;min-height:30px;background:#B4B5DF;border-radius:2px;"></div>
+          <h2 style="margin:0;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#2b333c;line-height:1.15;">Wider Reading &amp; Watching</h2>
+          <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#575E6E;background:#E7E6E6;border-radius:99px;padding:4px 11px;">Optional</span>
+        </div>
+        <p style="margin:0 0 22px;color:#4A4A4A;font-size:14.5px;max-width:74ch;">Not required — but the best geographers are curious. Dip into anything here over the summer to build your wider understanding.</p>
+
+        <!-- Books -->
+        <h4 style="margin:0 0 4px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#6D4EA0;">Books &amp; Magazines</h4>
+        <ul style="margin:0 0 24px;padding:0;list-style:none;">
+          <li style="display:flex;gap:10px;padding:10px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.google.com/search?q=Prisoners+of+Geography+Tim+Marshall" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Prisoners of Geography</a> — Tim Marshall. A superb introduction to geopolitics: how physical geography shapes political reality and the decisions of world leaders.</span></li>
+          <li style="display:flex;gap:10px;padding:10px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.hoddereducation.co.uk/magazines/magazine-geography-review" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Geography Review Magazine</a> — subscribe (around £40) for four up-to-date issues with articles directly relevant to your topics.</span></li>
+          <li style="display:flex;gap:10px;padding:10px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.google.com/search?q=Six+Degrees+Mark+Lynas" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Six Degrees</a> — Mark Lynas. A sobering walkthrough of climate impacts as global temperatures rise from 1°C to 6°C.</span></li>
+          <li style="display:flex;gap:10px;padding:10px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.google.com/search?q=Divided+Tim+Marshall" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Divided</a> — Tim Marshall. The follow-up to Prisoners of Geography: why the world is putting up barriers. Very relevant to Brexit, the US and pandemic-era politics.</span></li>
+        </ul>
+
+        <!-- Podcasts -->
+        <h4 style="margin:0 0 4px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#6D4EA0;">Podcasts</h4>
+        <ul style="margin:0 0 24px;padding:0;list-style:none;">
+          <li style="display:flex;gap:10px;padding:10px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.bbc.co.uk/programmes/b006r4wn/episodes/player" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Costing the Earth (BBC)</a> — a wide range of geographical issues: climate change, carbon, urban greening, deforestation, alternative power, plastics and more.</span></li>
+          <li style="display:flex;gap:10px;padding:10px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.rgs.org/schools/teaching-resources/ask-the-expert-podcasts/" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">RGS — Ask the Expert</a> — Royal Geographical Society podcasts keeping you up to date with the latest geographical research. Pick the ones that interest you.</span></li>
+          <li style="display:flex;gap:10px;padding:10px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://eternalexploration.wordpress.com/2016/01/04/top-10-podcasts-for-geography-students/" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Top 10 podcasts for geography students</a> — a curated list aimed at A Level geographers. The TED Talks come highly recommended.</span></li>
+        </ul>
+
+        <!-- Documentaries -->
+        <h4 style="margin:0 0 4px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#6D4EA0;">Documentaries</h4>
+        <p style="margin:0 0 8px;font-size:13.5px;color:#6F6F6F;">Great for building your general geographical knowledge — and a reminder of what an amazing world we live in.</p>
+        <ul style="margin:0;padding:0;list-style:none;">
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.bbc.co.uk/iplayer/group/p06m42d9" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">David Attenborough Box Sets</a> — nine boxsets on iPlayer exploring our planet.</span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.bbc.co.uk/iplayer/episodes/m00095p0/the-americas-with-simon-reeve" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">The Americas with Simon Reeve</a> — the Alaska/Canada episode is excellent for resource security and energy.</span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.bbc.co.uk/iplayer/group/p06rrnkm" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Simon Reeve Around the World</a> — the Russia series is particularly interesting.</span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.itv.com/hub/britain-underwater-fighting-the-floods/7a0157" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Britain Underwater: Fighting the Floods</a></span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.itv.com/hub/joanna-lumleys-hidden-caribbean-havana-to-haiti/2a7578" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Joanna Lumley's Hidden Caribbean: Havana to Haiti</a></span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.bbc.co.uk/iplayer/episode/m000g6nt/race-across-the-world-series-2-episode-1" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Race Across the World</a></span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.bbc.co.uk/programmes/b011qmcl/episodes/guide" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Andrew Marr's Megacities</a></span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.channel4.com/programmes/trumps-war-on-the-border" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Trump's War on the Border</a></span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.bbc.co.uk/iplayer/episode/p072n8m0/earth-from-space-series-1-4-changing-planet" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Earth from Space: The Changing Planet</a> — episode 4 (BBC).</span></li>
+          <li style="display:flex;gap:10px;padding:9px 0;border-top:1px solid #F1F1F1;"><span style="color:#8866BC;font-weight:700;flex:none;">›</span><span style="font-size:14px;color:#4A4A4A;line-height:1.5;"><a href="https://www.channel4.com/programmes/kevin-mcclouds-rough-guide-to-the-future" target="_blank" rel="noopener" style="color:#6D4EA0;font-weight:700;">Kevin McCloud's Rough Guide to the Future</a> — Channel 4, three episodes.</span></li>
+        </ul>
+      </section>
+
+      <!-- FOOTER -->
+      <div style="background:#FBDD40;padding:22px 40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2b333c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <div style="flex:1;min-width:240px;font-size:15px;color:#2b333c;line-height:1.45;"><strong>Remember:</strong> print your completed booklet and reading summaries, and bring them to your very first Year 12 lesson.</div>
+      </div>
+      <div style="background:#2b333c;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <span style="font-size:13px;color:#C9C8C8;">KS5 Geography · AQA A Level (7037)</span>
+        <span style="font-weight:700;text-transform:uppercase;letter-spacing:.26em;font-size:13px;color:#FBDD40;">Believe · Achieve · Succeed</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
